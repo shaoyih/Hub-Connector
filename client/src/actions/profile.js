@@ -53,6 +53,7 @@ export const getCurrentProfile = () => async dispatch => {
         });
       }
     };
+    
 
   // Get  github repos
   export const getGithubRepos = username => async dispatch => {
