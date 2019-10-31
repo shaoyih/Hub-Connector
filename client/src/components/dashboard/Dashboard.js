@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Spinner from '../layout/Spinner'
 import {getCurrentProfile} from '../../actions/profile';
-import DashboardActions from './DashboardAction'
+import DashboardActions from './DashboardAction';
+import Experience from './Experience';
+import Education from './Education';
 
 const Dashboard = ({getCurrentProfile,auth:{user},profile: {profile, loading}}) => {
     useEffect(() => {getCurrentProfile();}, [getCurrentProfile]);
@@ -16,6 +18,8 @@ const Dashboard = ({getCurrentProfile,auth:{user},profile: {profile, loading}}) 
         {profile !== null ? (
                     <Fragment>
                         <DashboardActions/>
+                        <Experience experience = {profile.experience} />
+                        <Education education ={profile.education}/>
                     </Fragment>
                 ):(
                     <Fragment>
